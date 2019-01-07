@@ -1,0 +1,83 @@
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 12:35:07 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 12:41:36 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 12:42:09 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 12:45:54 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 12:58:55 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--WARN -org.springframework.context.support.ClassPathXmlApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'savingsAccountServiceImpl': Unsatisfied dependency expressed through field 'savingsAccountDAO'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.cg.app.account.dao.SavingsAccountDAO' available: expected single matching bean but found 2: savingsAccountDAOImpl,savingsAccountSJDAOImpl
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 12:59:05 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 15:58:23 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 16:53:25 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.support.SQLErrorCodesFactory:SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 16:55:30 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 16:58:03 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 16:58:34 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 16:59:05 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:00:36 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.support.SQLErrorCodesFactory:SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:06:08 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:11:00 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:11:40 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:15:14 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:16:12 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:16:48 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:18:54 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.support.SQLErrorCodesFactory:SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:19:24 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.support.SQLErrorCodesFactory:SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:20:37 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.support.SQLErrorCodesFactory:SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:25:46 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07-main--INFO -org.springframework.context.support.ClassPathXmlApplicationContext:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593634ad: startup date [Mon Jan 07 17:38:52 IST 2019]; root of context hierarchy
+2019-01-07-main--INFO -org.springframework.beans.factory.xml.XmlBeanDefinitionReader:Loading XML bean definitions from class path resource [context.xml]
+2019-01-07-main--INFO -org.springframework.jdbc.datasource.DriverManagerDataSource:Loaded JDBC driver: com.mysql.jdbc.Driver
