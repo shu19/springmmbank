@@ -41,18 +41,19 @@ public class CurrentAccountServiceImpl implements CurrentAccountService {
 			double currentBalance = account.getBankAccount().getAccountBalance();
 			currentBalance += amount;
 			currentAccountDAO.updateBalance(account.getBankAccount().getAccountNumber(), currentBalance);
-			//savingsAccountDAO.commit();
-		}else {
+			// savingsAccountDAO.commit();
+		} else {
 			throw new InvalidInputException("Invalid Input Amount!");
 		}
 	}
+
 	@Override
 	public void withdraw(CurrentAccount account, double amount) throws ClassNotFoundException, SQLException {
-		double currentBalance = account.getBankAccount().getAccountBalance()+account.getOdLimit();
+		double currentBalance = account.getBankAccount().getAccountBalance() + account.getOdLimit();
 		if (amount > 0 && currentBalance >= amount) {
 			currentBalance -= amount;
 			currentAccountDAO.updateBalance(account.getBankAccount().getAccountNumber(), currentBalance);
-			//savingsAccountDAO.commit();
+			// savingsAccountDAO.commit();
 		} else {
 			throw new InsufficientFundsException("Invalid Input or Insufficient Funds!");
 		}
@@ -68,21 +69,22 @@ public class CurrentAccountServiceImpl implements CurrentAccountService {
 		} catch (InvalidInputException | InsufficientFundsException e) {
 			e.printStackTrace();
 			DBUtil.rollback();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			DBUtil.rollback();
 		}
 	}
 
-
 	@Override
-	public CurrentAccount getAccountById(int accountNumber) throws ClassNotFoundException, SQLException, AccountNotFoundException {
+	public CurrentAccount getAccountById(int accountNumber)
+			throws ClassNotFoundException, SQLException, AccountNotFoundException {
 		return currentAccountDAO.getAccountById(accountNumber);
 	}
 
 	@Override
-	public boolean deleteAccount(int accountNumber) throws ClassNotFoundException, SQLException, AccountNotFoundException {
-		
+	public boolean deleteAccount(int accountNumber)
+			throws ClassNotFoundException, SQLException, AccountNotFoundException {
+
 		return currentAccountDAO.deleteAccount(accountNumber);
 	}
 
@@ -92,28 +94,31 @@ public class CurrentAccountServiceImpl implements CurrentAccountService {
 	}
 
 	@Override
-	public int updateAccount(int accountnumber, String newAccountHolderName) throws ClassNotFoundException, SQLException {
-		
-		return currentAccountDAO.updateAccount(accountnumber,newAccountHolderName);
+	public int updateAccount(int accountnumber, String newAccountHolderName)
+			throws ClassNotFoundException, SQLException {
+
+		return currentAccountDAO.updateAccount(accountnumber, newAccountHolderName);
 	}
 
 	@Override
-	public double checkAccountBalance(int accountnumber) throws ClassNotFoundException, SQLException, AccountNotFoundException {
-			
+	public double checkAccountBalance(int accountnumber)
+			throws ClassNotFoundException, SQLException, AccountNotFoundException {
+
 		return currentAccountDAO.getAccountBalance(accountnumber);
 	}
 
 	@Override
-	public CurrentAccount getAccountByHolderName(String accountHolderName) throws ClassNotFoundException, AccountNotFoundException, SQLException {
-		
+	public CurrentAccount getAccountByHolderName(String accountHolderName)
+			throws ClassNotFoundException, AccountNotFoundException, SQLException {
+
 		return currentAccountDAO.getAccountByHolderName(accountHolderName);
 	}
 
 	@Override
-	public List<CurrentAccount> getAllCurrentAccountInBalanceRange(
-			double minimumAccountBalance, double maximumAccountBalance) throws ClassNotFoundException, SQLException, AccountNotFoundException {
+	public List<CurrentAccount> getAllCurrentAccountInBalanceRange(double minimumAccountBalance,
+			double maximumAccountBalance) throws ClassNotFoundException, SQLException, AccountNotFoundException {
 
-		return currentAccountDAO.getAllCurrentAccountInBalanceRange(minimumAccountBalance,maximumAccountBalance);
+		return currentAccountDAO.getAllCurrentAccountInBalanceRange(minimumAccountBalance, maximumAccountBalance);
 	}
 
 }

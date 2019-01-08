@@ -16,7 +16,7 @@ public class CurrentAccountDAOImpl implements CurrentAccountDAO {
 
 	public CurrentAccount createNewAccount(CurrentAccount account) throws ClassNotFoundException, SQLException {
 		Connection connection = DBUtil.getConnection();
-		PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ACCOUNT (account_hn,account_bal,odLimit,type) VALUES(?,?,?,?,?)");
+		PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ACCOUNT (account_hn,account_bal,odLimit,type) VALUES(?,?,?,?)");
 		preparedStatement.setString(1, account.getBankAccount().getAccountHolderName());
 		preparedStatement.setDouble(2, account.getBankAccount().getAccountBalance());
 		preparedStatement.setDouble(3, account.getOdLimit());

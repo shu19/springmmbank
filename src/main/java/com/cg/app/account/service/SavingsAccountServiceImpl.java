@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.app.account.SavingsAccount;
 import com.cg.app.account.dao.SavingsAccountDAO;
@@ -46,48 +47,44 @@ public class SavingsAccountServiceImpl implements SavingsAccountService {
 			double currentBalance = account.getBankAccount().getAccountBalance();
 			currentBalance += amount;
 			savingsAccountDAO.updateBalance(account.getBankAccount().getAccountNumber(), currentBalance);
-			//savingsAccountDAO.commit();
-		}else {
+			// savingsAccountDAO.commit();
+		} else {
 			throw new InvalidInputException("Invalid Input Amount!");
 		}
 	}
+
 	@Override
 	public void withdraw(SavingsAccount account, double amount) throws ClassNotFoundException, SQLException {
 		double currentBalance = account.getBankAccount().getAccountBalance();
 		if (amount > 0 && currentBalance >= amount) {
 			currentBalance -= amount;
 			savingsAccountDAO.updateBalance(account.getBankAccount().getAccountNumber(), currentBalance);
-			//savingsAccountDAO.commit();
+			// savingsAccountDAO.commit();
 		} else {
 			throw new InsufficientFundsException("Invalid Input or Insufficient Funds!");
 		}
 	}
 
+	@Transactional
 	@Override
 	public void fundTransfer(SavingsAccount sender, SavingsAccount receiver, double amount)
 			throws ClassNotFoundException, SQLException {
-		try {
-			withdraw(sender, amount);
-			deposit(receiver, amount);
-			DBUtil.commit();
-		} catch (InvalidInputException | InsufficientFundsException e) {
-			e.printStackTrace();
-			DBUtil.rollback();
-		} catch(Exception e) {
-			e.printStackTrace();
-			DBUtil.rollback();
-		}
+
+		deposit(receiver, amount);
+		withdraw(sender, amount);
+
 	}
 
-
 	@Override
-	public SavingsAccount getAccountById(int accountNumber) throws ClassNotFoundException, SQLException, AccountNotFoundException {
+	public SavingsAccount getAccountById(int accountNumber)
+			throws ClassNotFoundException, SQLException, AccountNotFoundException {
 		return savingsAccountDAO.getAccountById(accountNumber);
 	}
 
 	@Override
-	public boolean deleteAccount(int accountNumber) throws ClassNotFoundException, SQLException, AccountNotFoundException {
-		
+	public boolean deleteAccount(int accountNumber)
+			throws ClassNotFoundException, SQLException, AccountNotFoundException {
+
 		return savingsAccountDAO.deleteAccount(accountNumber);
 	}
 
@@ -97,34 +94,36 @@ public class SavingsAccountServiceImpl implements SavingsAccountService {
 	}
 
 	@Override
-	public int updateAccount(int accountnumber, String newAccountHolderName) throws ClassNotFoundException, SQLException {
-		
-		return savingsAccountDAO.updateAccount(accountnumber,newAccountHolderName);
+	public int updateAccount(int accountnumber, String newAccountHolderName)
+			throws ClassNotFoundException, SQLException {
+
+		return savingsAccountDAO.updateAccount(accountnumber, newAccountHolderName);
 	}
 
 	@Override
-	public double checkAccountBalance(int accountnumber) throws ClassNotFoundException, SQLException, AccountNotFoundException {
-			
+	public double checkAccountBalance(int accountnumber)
+			throws ClassNotFoundException, SQLException, AccountNotFoundException {
+
 		return savingsAccountDAO.getAccountBalance(accountnumber);
 	}
 
 	@Override
-	public SavingsAccount getAccountByHolderName(String accountHolderName) throws ClassNotFoundException, AccountNotFoundException, SQLException {
-		
+	public SavingsAccount getAccountByHolderName(String accountHolderName)
+			throws ClassNotFoundException, AccountNotFoundException, SQLException {
+
 		return savingsAccountDAO.getAccountByHolderName(accountHolderName);
 	}
 
 	@Override
-	public List<SavingsAccount> getAllSavingsAccountInBalanceRange(
-			double minimumAccountBalance, double maximumAccountBalance) throws ClassNotFoundException, SQLException, AccountNotFoundException {
+	public List<SavingsAccount> getAllSavingsAccountInBalanceRange(double minimumAccountBalance,
+			double maximumAccountBalance) throws ClassNotFoundException, SQLException, AccountNotFoundException {
 
-		return savingsAccountDAO.getAllSavingsAccountInBalanceRange(minimumAccountBalance,maximumAccountBalance);
+		return savingsAccountDAO.getAllSavingsAccountInBalanceRange(minimumAccountBalance, maximumAccountBalance);
 	}
 
 	@Override
-	public SavingsAccount updateAccount(SavingsAccount savingsAccount)
-			throws ClassNotFoundException, SQLException {
-		
+	public SavingsAccount updateAccount(SavingsAccount savingsAccount) throws ClassNotFoundException, SQLException {
+
 		return savingsAccountDAO.updateAccount(savingsAccount);
 	}
 

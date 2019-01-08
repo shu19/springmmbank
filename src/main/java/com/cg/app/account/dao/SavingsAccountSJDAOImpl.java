@@ -1,11 +1,6 @@
 package com.cg.app.account.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import com.cg.app.account.SavingsAccount;
 import com.cg.app.account.dao.mapper.SavingsAccountMapper;
-import com.cg.app.account.util.DBUtil;
 import com.cg.app.exception.AccountNotFoundException;
 
 @Primary
@@ -26,7 +20,7 @@ public class SavingsAccountSJDAOImpl implements SavingsAccountDAO {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public SavingsAccount createNewAccount(SavingsAccount account) throws ClassNotFoundException, SQLException {
+	public SavingsAccount createNewAccount(SavingsAccount account) {
 		jdbcTemplate.update("INSERT INTO ACCOUNT (account_hn,account_bal,salary,type) VALUES(?,?,?,?)",
 				new Object[] { account.getBankAccount().getAccountHolderName(),
 						account.getBankAccount().getAccountBalance(), account.isSalary(), "SA" });
@@ -34,35 +28,33 @@ public class SavingsAccountSJDAOImpl implements SavingsAccountDAO {
 	}
 
 	@Override
-	public SavingsAccount getAccountById(int accountNumber)
-			throws ClassNotFoundException, SQLException, AccountNotFoundException {
+	public SavingsAccount getAccountById(int accountNumber) {
 
 		return jdbcTemplate.queryForObject("SELECT * FROM account WHERE account_id=?", new Object[] { accountNumber },
 				new SavingsAccountMapper());
 	}
 
 	@Override
-	public boolean deleteAccount(int accountNumber)
-			throws ClassNotFoundException, SQLException, AccountNotFoundException {
+	public boolean deleteAccount(int accountNumber) {
 
 		return jdbcTemplate.update("DELETE FROM ACCOUNT WHERE TYPE='SA' AND account_id=?", accountNumber) > 0;
 	}
 
 	@Override
-	public List<SavingsAccount> getAllSavingsAccount() throws ClassNotFoundException, SQLException {
+	public List<SavingsAccount> getAllSavingsAccount() {
 		String query = "SELECT * FROM ACCOUNT";
 		return jdbcTemplate.query(query, new SavingsAccountMapper());
 	}
 
 	@Override
-	public void updateBalance(int accountNumber, double currentBalance) throws ClassNotFoundException, SQLException {
+	public void updateBalance(int accountNumber, double currentBalance) {
 
 		jdbcTemplate.update("UPDATE ACCOUNT SET account_bal=? where account_id=?",
 				new Object[] { currentBalance, accountNumber });
 	}
 
 	@Override
-	public List<SavingsAccount> getSortedAccounts(int choice) throws ClassNotFoundException, SQLException {
+	public List<SavingsAccount> getSortedAccounts(int choice) {
 		String query = "SELECT * FROM ACCOUNT WHERE TYPE='SA'";
 
 		switch (choice) {
@@ -102,8 +94,7 @@ public class SavingsAccountSJDAOImpl implements SavingsAccountDAO {
 	}
 
 	@Override
-	public SavingsAccount getAccountByHolderName(String accountHolderName)
-			throws AccountNotFoundException, ClassNotFoundException, SQLException {
+	public SavingsAccount getAccountByHolderName(String accountHolderName) {
 		String query = "SELECT * FROM ACCOUNT WHERE TYPE='SA' AND account_hn LIKE ?";
 
 		return jdbcTemplate.queryForObject(query, new Object[] { "%" + accountHolderName + "%" },
@@ -112,7 +103,7 @@ public class SavingsAccountSJDAOImpl implements SavingsAccountDAO {
 
 	@Override
 	public List<SavingsAccount> getAllSavingsAccountInBalanceRange(double minimumAccountBalance,
-			double maximumAccountBalance) throws ClassNotFoundException, SQLException, AccountNotFoundException {
+			double maximumAccountBalance) {
 		String query = "SELECT * FROM ACCOUNT WHERE TYPE='SA' AND account_bal >= ? AND account_bal <= ?";
 		return jdbcTemplate.query(query, new Object[] { minimumAccountBalance, maximumAccountBalance },
 				new SavingsAccountMapper());
@@ -120,7 +111,7 @@ public class SavingsAccountSJDAOImpl implements SavingsAccountDAO {
 	}
 
 	@Override
-	public SavingsAccount updateAccount(SavingsAccount savingsAccount) throws ClassNotFoundException, SQLException {
+	public SavingsAccount updateAccount(SavingsAccount savingsAccount) {
 
 		jdbcTemplate.update("UPDATE ACCOUNT SET account_hn=?,salary=?  where TYPE='SA' AND account_id=?",
 				new Object[] { savingsAccount.getBankAccount().getAccountHolderName(), savingsAccount.isSalary(),
@@ -129,9 +120,9 @@ public class SavingsAccountSJDAOImpl implements SavingsAccountDAO {
 	}
 
 	@Override
-	public int updateAccount(int accountnumber, String newAccountHolderName)
-			throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+	public int updateAccount(int accountnumber, String newAccountHolderName) {
+		String query = "UPDATE ACCOUNT SET account_hn=? where TYPE='SA' AND account_id=?";
+
+		return jdbcTemplate.update(query, new Object[] { newAccountHolderName, accountnumber });
 	}
 }

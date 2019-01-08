@@ -1,0 +1,6 @@
+projectKey=com.cg.app:springmmbank
+serverUrl=http://localhost:9000
+serverVersion=6.7.6.38781
+dashboardUrl=http://localhost:9000/dashboard/index/com.cg.app:springmmbank
+ceTaskId=AWgrrrpz8RmQDfxk5rz2
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWgrrrpz8RmQDfxk5rz2
